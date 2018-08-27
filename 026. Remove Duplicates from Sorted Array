@@ -1,0 +1,15 @@
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+
+it's easy, we just use two pointer, and move the faster to the slower one.
+
+and return the slower index.
+
+```
+
+        int n = A.length;
+        if(n < 2) return n;
+        int id = 1;
+        for(int i = 1; i < n; ++i)
+            if(A[i] != A[i-1]) A[id++] = A[i];
+        return id;
+```
