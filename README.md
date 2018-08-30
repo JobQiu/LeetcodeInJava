@@ -31,6 +31,101 @@
 |     |        |                         |             |
 |     |        |                         |             |
 
+## 105. Construct Binary Tree from Preorder and Inorder Traversal
+
+Things learned from this, Arrays.copyOfRange(), start is inclusive, and end is not inclusive.
+
+
+
+```
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ *
+ * preorder = [3,9,20,15,7]
+ * inorder = [9,3,15,20,7]
+ */
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        // take this as an example, we know that 3 is the root of the whole tree
+        // search it in the inorder, we will know what are in the left and what nodes are in the right
+
+        if(preorder == null || preorder.length == 0){
+            return null;
+        } // end of if
+
+        int l = preorder.length;
+
+        if(preorder.length == 1){
+            return new TreeNode(preorder[0]);
+        } // end of if
+
+        TreeNode root = new TreeNode(preorder[0]);
+        int i = 0;
+        // 1. search the index of the root in inorder array
+        for(i = 0; i < inorder.length ; i++){
+            if(inorder[i] == root.val){
+                break;
+
+            } // end of if
+        } // end of for I
+
+        // take 3 as an example, when i = 1 it will return
+
+        root.left = buildTree(Arrays.copyOfRange(preorder, 1, i+1), Arrays.copyOfRange(inorder,0, i));
+        root.right = buildTree(Arrays.copyOfRange(preorder, i+1, l), Arrays.copyOfRange(inorder,i+1,l));
+
+        return root;
+    }
+}
+
+```
+
+But my method is very slow. What is the time complexity of this method, it's O(logn), to divide them into two part and build the subtrees. Or maybe it's inefficient to use Arrays.copyOfRange
+
+
+```
+
+class Solution {
+  public TreeNode buildTree(int[] preorder, int[] inorder) {
+    //Corner cases.
+    if (preorder == null
+        || inorder == null || preorder.length != inorder.length || preorder.length == 0) {
+      return null;
+    }
+    return buildTreeHelper(preorder, new int[1], inorder, new int[1], Integer.MIN_VALUE);
+  }
+  //What things do this recursion do?
+    //1. reconstructs the subtree based on preorder.
+    //2. traverses the tree following in order.
+      //Key point: the next in order travering node is root itself --> the left subtree is over.
+      //And we could make use of this key point to identify the boundary of the left subtree of the current root.
+
+  //rootValue: the next inorder traversing node after finishing up the current subtree.
+  private TreeNode buildTreeHelper(int[] preorder, int[] preIndex, int[] inorder, int[] inIndex, int rootValue) {
+    //Base case.
+    if (inIndex[0] == inorder.length || inorder[inIndex[0]] == rootValue) {
+      return null;
+    }
+    //Recursive case.
+    int curRootVal = preorder[preIndex[0]];
+    TreeNode curRoot = new TreeNode(curRootVal);
+    preIndex[0]++;
+    curRoot.left = buildTreeHelper(preorder, preIndex, inorder, inIndex, curRootVal);
+    inIndex[0]++;
+    curRoot.right = buildTreeHelper(preorder, preIndex, inorder, inIndex, rootValue);
+    return curRoot;
+  }
+}
+```
+
+The idea is same, but it used index to build it. I think it's cool.
+
 
 ## 795. Number of Subarrays with Bounded Maximum
 
