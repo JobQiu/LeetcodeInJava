@@ -1,7 +1,8 @@
 # LeetcodeInJava
 
-Some procedure to practice from [this doc(https://docs.google.com/document/d/1yxATCtTuv5ZgomU2AeL6luNwPWvHSBYSh7V8FLvtLM8/edit#):
+Some procedure to practice from [this doc](https://docs.google.com/document/d/1yxATCtTuv5ZgomU2AeL6luNwPWvHSBYSh7V8FLvtLM8/edit#):
 
+```
 Read the problem, think about the solutions:
 if(easy){
   coding, compare with the hottest or fastest solutions
@@ -18,8 +19,8 @@ if(easy){
     mark it and see if I can come up with the idea later
   }
 }
-summary for certain topics. 
-
+summary for certain topics.
+```
 
 ### Some summary about each category
 
