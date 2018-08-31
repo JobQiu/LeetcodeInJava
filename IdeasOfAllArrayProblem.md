@@ -1,4 +1,4 @@
-
+[TOC]
 
 ## 011. container with most water
 >https://leetcode.com/problems/container-with-most-water/description/
@@ -108,3 +108,191 @@ The overall time complexity is O(N^3)
 
 `What if we just iterate the number and do 3sum in the subarray`.
 The time complexity of a 3-sum is O(N^2), so the total time complexity is also O(N^3), the amount of the code will be smaller.
+
+Some tips from discussion:
+1. we can stop eariler at some situation, for example, we want to search two numbers whose sum is 5, but the largest number in our array is 1, which means it's impossible to find two numbers whose sum = 5, we can just give up this array and continue
+2. Same when sum is too small.
+
+
+## 035. search insert position.
+
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You may assume no duplicates in the array.
+
+Example 1:
+
+Input: [1,3,5,6], 5
+Output: 2
+Example 2:
+
+Input: [1,3,5,6], 2
+Output: 1
+Example 3:
+
+Input: [1,3,5,6], 7
+Output: 4
+Example 4:
+
+Input: [1,3,5,6], 0
+Output: 0
+
+it's easy if you use two pointers.
+take this as an example
+[1 3 5 6]
+
+  index val
+s   0 -> 1
+e   3 -> 6,
+mid 1 -> 3
+
+compare the number with mid, which is smaller, so we move end to mid
+
+s 0
+e 1
+
+we will stop when e-s == 1
+
+some special situation is like 0 to [1 3 4]
+and 7 to [1 3 4]
+
+so we can compare the smallest and largest number with the target number firstly
+if it's not the beginning or the end, use while to determine the position.
+
+The time complexity of this method is log n, just like binary search
+we dont need extra space for this.
+
+Nothing special about this problem, so we just skip to the next problem.
+
+## 041. first missing positive
+
+Given an unsorted integer array, find the smallest missing positive integer.
+
+Example 1:
+
+Input: [1,2,0]
+Output: 3
+Example 2:
+
+Input: [3,4,-1,1]
+Output: 2
+Example 3:
+
+Input: [7,8,9,11,12]
+Output: 1
+
+---
+
+The idea of this problem is to use swap those number within the range to where they should be.
+
+for example, as to [3 4 -1 1]
+we swap the 3 to the third number in this array
+[-1 4 3 1]
+4 is out of the range, we dont touch it
+[-1 4 3 1]
+3 is in the right position, we dont touch it
+as to 1, it should be put to the first
+[1 4 3 -1]
+
+and then start from the beginning, and we find there is no 2 in this array.
+
+The time complexity of this method is O(N), since we just need to iterate once, we dont need extra space as well.
+
+Some special situation of this problem is that.
+
+for i = 0
+nothing happen because 4 is out of the range
+for i = 1
+[4 3 2 1]
+As to 3, you need to swap 3 with 1, but you cannot just continue to deal with 2 now.
+[4 1 2 3]
+You have to continue to swap 4 and 1, i.e. put 1 to its right position.
+[1 4 2 3]
+// keep swapping until the second number is in its right position.
+// so you will use a while here, keep swaping until the second value <=0 or >= len(arr)
+
+for i = 2
+[1 2 4 3]
+
+for i = 3
+[1 2 3 4]
+
+then you know the answer should be 5
+
+`What I've learned from this problem:
+it's difficult to come up with this swapping solution at the beginning.
+So I think it's a good idea to image what kind of temporary result you want if you want to solve this in O(N) time.
+An ideal temporary result is to convert the original arr into sth like
+[-1 4 3 1] -> [1 _ 3 _ ], then u can use O(N) to get what you want, then start to think how can i get this temporary result.
+Result driven way to solve problems.
+
+`
+
+## 045. Jump Game II
+
+// for example, iterate all the number into the
+
+okay, the idea to solve this problem is, for example, we can use a BFS to store the level of each
+
+take this as an example,
+[2 3 1 1 1 1 1 4]
+[0 1 1 ]
+2>3>     1 1 1 4
+
+
+
+//
+
+
+public int jump(int[] nums) {
+
+  int curr = 0;
+  int level = new int[nums.length];
+
+  int s_cur;
+  int e_cur;
+
+  int s_next;
+  int e_next;
+
+
+  // [2 3 1 1 1 1 1 4]
+  //  s
+  //  e
+  //    s
+  //      e
+  //        s
+  //          e
+  //            s
+  //            e
+  //                s
+  //                e
+
+
+
+}
+
+
+##
+
+Given a 2d matrix, find the largest sum of sub matrix.
+
+//  1  2  3  4  5
+// -1  -9 1 -3 10
+//  
+
+## 53. Maximum Subarray
+
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+Example:
+
+Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+Follow up:
+
+If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+
+---

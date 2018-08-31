@@ -1,5 +1,29 @@
 # LeetcodeInJava
 
+Some procedure to practice from [this doc(https://docs.google.com/document/d/1yxATCtTuv5ZgomU2AeL6luNwPWvHSBYSh7V8FLvtLM8/edit#):
+
+Read the problem, think about the solutions:
+if(easy){
+  coding, compare with the hottest or fastest solutions
+  if(different with their solution){
+    compare and learn sth from their solutions.
+  }
+}else{
+  check the hottest solution
+  if(the idea is similar){
+    be clear about the idea and why i didn't come up with the idea that is doable, and coding
+  } else{
+    understand their ideas, run some test cases
+    coding;
+    mark it and see if I can come up with the idea later
+  }
+}
+summary for certain topics. 
+
+
+### Some summary about each category
+
+
 
 ### The optimal procedure of code interview from experience
 
