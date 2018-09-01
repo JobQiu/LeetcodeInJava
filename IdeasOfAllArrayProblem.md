@@ -240,37 +240,81 @@ take this as an example,
 2>3>     1 1 1 4
 
 
+```
 
-//
-
-
-public int jump(int[] nums) {
-
-  int curr = 0;
-  int level = new int[nums.length];
-
-  int s_cur;
-  int e_cur;
-
-  int s_next;
-  int e_next;
+class Solution {
+    public int jump(int[] nums) {
 
 
-  // [2 3 1 1 1 1 1 4]
-  //  s
-  //  e
-  //    s
-  //      e
-  //        s
-  //          e
-  //            s
-  //            e
-  //                s
-  //                e
+        // the idea of this problem is to use another int array to store the temporary result         
+        //                         [0 1 2 3 4 5 6]
+        // take this as an example [2 3 1 1 1 1 4]
+        // so the level will be    [2 ] level 0
+        //                           [3 1] level 1
+        //                               [1 1] level 2
+        //                                   [1] level 3
+        //                                     [4] level 4
+        // so we need 4 steps to reach
 
+        // filter some special situation
+        if(nums ==null || nums.length <= 1){
+            return 0;
+        } // end of if
 
+        int l = nums.length;
 
+        int start = 0;
+        int end = 0;
+        int level = 0;
+
+        while( end<l){
+            int max = 0;
+            for(int i = start; i <= end ; i++){
+                max = Math.max(nums[i]+i,max);
+
+                if(max>=l-1){
+                    return level+1;
+                } // end of if
+            } // end of for I
+
+            start = end+1;
+            end = max;
+            level++;
+        }
+
+        return level;
+    }
 }
+
+```
+
+But the result of this code is slow, so I will compare this with the fastest and see what I can improve it.
+
+
+```
+class Solution {
+    public int jump(int[] nums) {
+        int jump = 0, curEnd = 0, curFar = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            curFar = Math.max(curFar, nums[i] + i);
+            if (i == curEnd) {
+                jump++;
+                curEnd = curFar;
+            }
+        }
+        return jump;
+    }
+}
+
+```
+
+`6ms VS 5ms`
+The code is very clean!
+`Things leart from this code and this problem.`
+1. initialize the variable together make the code clean, and usually initialization is meaningless, so it's reasonable to put them together to highlight other code whose has more information.
+
+
+
 
 
 ##
@@ -296,3 +340,92 @@ If you have figured out the O(n) solution, try coding another solution using the
 
 
 ---
+
+
+## 63. Unique Paths II
+
+> A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+<img src="https://leetcode.com/static/images/problemset/robot_maze.png" width="250px"/>
+
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+
+Note: m and n will be at most 100.
+
+Example 1:
+
+Input:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+Output: 2
+Explanation:
+There is one obstacle in the middle of the 3x3 grid above.
+There are two ways to reach the bottom-right corner:
+1. Right -> Right -> Down -> Down
+2. Down -> Down -> Right -> Right
+
+----
+
+I think it's not difficult, just use dp to start from the end and firstly the last row and last column, they should be 1.
+
+```
+obstacle    path number of the end
+[0 0 0]    [0 0 1]
+[0 1 0]    [0 0 1]
+[0 0 0]    [1 1 1]
+
+then update according to the obstacle matrix
+and from down to up, right->left
+
+
+obstacle    path number of the end
+[0 0 0]    [2 1 1]
+[0 1 0]    [1 0 1]
+[0 0 0]    [1 1 1]
+
+```
+
+Result driven, if you want to reach the bottom-right, you must reach [1,2] or [2,1] in this example.
+
+
+## 64. Minimum Path Sum
+
+Same idea as the last one, from [2,2] to [0,0]
+
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
+
+Example:
+
+Input:
+[
+  [1,3,1],
+  [1,5,1],
+  [4,2,1]
+]
+Output: 7
+Explanation: Because the path 1→3→1→1→1 minimizes the sum.
+
+```
+[1,3,1]    [1 3 3]
+[1,5,1] -> [1 5 2]
+[4,2,1]    [7 3 1]
+
+[1,3,1]    [1 3 3]    [1 3 3]    [1 3 3]
+[1,5,1] -> [1 5 2] -> [1 7 2] -> [8 7 2] ->
+[4,2,1]    [7 3 1]    [7 3 1]    [7 3 1]
+
+
+[7 6 3]
+[8 7 2]
+[7 3 1]
+
+so the result is 7.
+
+```

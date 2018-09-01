@@ -29,11 +29,11 @@ summary for certain topics.
 ### The optimal procedure of code interview from experience
 
 - [ ] Read the problem and ask for clarifications. some specific situation of input,
-- [ ] What should we do if we dont have any idea
-- [ ] Explain the method in a normal speed, and ask questions like, do u follow me, does this make sense, or can u correct me when it doesnot make sense.
+- [ ] What should we do if we dont have any idea. I think in real world, there is no best solution as we solve the problems in leetcode. So I think in real work, if you need to get things done, you have to search the website, ask information from senior colleagues. At least you need to get things done even in brute force ways. And then you need to mark it and try your best to improve it.
+- [ ] Explain the method in a normal speed, and ask questions like, do u follow me, does this make sense, or can u correct me when it does not make sense.
 - [ ] i think it's a good idea to list several examples, and explain your solution using those examples
 - [ ] explain the time complexity and space cost, try to spend sometime to find a better solution, or ask if the interviewer has some ideas
-- [ ] start to code, say sth about what you are doing so that interviewer know what you're doing.
+- [ ] start to code, say sth about what you are doing so that interviewer know what you're doing. Not just repeat your code. It's boring.  
 - [ ] i think it's a good idea to type some comment about what this function will do, what this block will do, make the code readable and maintainable.
 - [ ] if it's easy, i think it's a good idea to ask sth outside of the code, like, what's the weather in balabala, is that happy to work in balabala.
 - [ ] finish the code, and i think it's good to prepare a checklist like the next section, check the mistakes you might make. [it's a good idea to collect your mistakes and sort them by frequency]
@@ -283,7 +283,7 @@ So firstly, we will build a priority queue to store those node we want to expand
 The most efficient way to solve this problem is to use a swap function to swap the number between 0 to l to other number.
 
 For example, [3 4 -1 1, 2 ], we can use O(N) time to swap them into an array like this:
-
+```
 [3 4 -1 1 2]
 swap 3 and -1,
 [-1 4 3 1 2]
@@ -297,5 +297,5 @@ continue to 4
 continue to 2
 swap -1 and 2
 [1 2 3 4 -1]
-
+```
 iterate the array and you will know the minimal positive value is 5 for this example.
