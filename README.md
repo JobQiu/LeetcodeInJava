@@ -28,8 +28,8 @@ summary for certain topics.
 
 ### The optimal procedure of code interview from experience
 
-- [ ] Read the problem and ask for clarifications. some specific situation of input,
-- [ ] What should we do if we dont have any idea. I think in real world, there is no best solution as we solve the problems in leetcode. So I think in real work, if you need to get things done, you have to search the website, ask information from senior colleagues. At least you need to get things done even in brute force ways. And then you need to mark it and try your best to improve it.
+- [ ] Read the problem and ask for clarifications. some specific situation of input, get every information you need, you might miss sth that could be helpful.
+- [ ] What should we do if we don't have any idea. I think in real world, there is no best solution as we solve the problems in leetcode. So I think in real work, if you need to get things done, you have to search the website, ask information from senior colleagues. At least you need to get things done even in brute force ways. And then you need to mark it and try your best to improve it.
 - [ ] Explain the method in a normal speed, and ask questions like, do u follow me, does this make sense, or can u correct me when it does not make sense.
 - [ ] i think it's a good idea to list several examples, and explain your solution using those examples
 - [ ] explain the time complexity and space cost, try to spend sometime to find a better solution, or ask if the interviewer has some ideas
