@@ -22,6 +22,10 @@ if(easy){
 summary for certain topics.
 ```
 
+Also a good idea to practice your ability to implement your ideas, for example, you cannot come up with the idea to solve the problem, but if you know the idea and you want to test your code ability. I think you can write down the idea and implement it the next day.
+
+
+
 ### Some summary about each category
 
 

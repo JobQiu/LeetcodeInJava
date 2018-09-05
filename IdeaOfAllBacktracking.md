@@ -1,5 +1,11 @@
 
 
+// take abb as an example,
+at
+
+firstly you just have an abb
+
+
 public void backtrack(
   List<List<String>> lists,
   List<String> list,
@@ -8,11 +14,14 @@ public void backtrack(
   int r
   ){
 
+
     if(l == r){
 
       lists. add(new ArrayList(list));
       return;
       } // end of if
+
+
 
 
 }
