@@ -1,3 +1,102 @@
+Things learned from dp problems :
+
+use previous result to get the result for the current one.
+
+
+---
+
+## 095. Unique Binary Search Trees II
+
+Input: 3
+Output:
+[
+  [1,null,3,2],
+  [3,2,null,1],
+  [3,1,null,null,2],
+  [2,1,3],
+  [1,null,2,null,3]
+]
+Explanation:
+The above output corresponds to the 5 unique BST's shown below:
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+
+
+
+
+
+----
+
+## 032 longest valid parentheses
+
+```
+public int longestParantheses(String s){
+  int res = 0;
+  //
+  if(s == null || s.length()<=1){
+    return 0;
+    } // end of if
+    char[] chs = s.toCharArray();
+    int[] dp = new int[chs.length];
+
+    for(int i = 1; i < chs.length ; i++){
+      // 1. if it's (, we skip
+
+        if(chs[i]=='('){
+          continue;
+          dp[i] = 0;
+          } // end of if
+          else{
+            if(chs[i-1] == '('){
+              // for situation like this '()'
+              dp[i] = i>=3? dp[i-2] + 2: 2;
+              } // end of if
+              else{
+                // check this (())
+                //              2i
+                int idx = i-dp[i-1]-1;
+                if(idx>=0 && chs[idx] == '('){
+                  dp[i] = dp[i-1]+2;
+                  } // end of if
+
+                  if(idx-1>=0){
+                    dp[i]+=dp[idx-1];
+                    } // end of if
+              }
+              res = Math.max(res,dp[i]);
+
+
+          }
+
+
+
+      } // end of for I
+}
+
+
+```
+
+so the problem here is to find the longest length
+
+take )()()) as an example, we need to return 4
+
+```
+// )()())
+// |
+
+// so the first idea is to use a pointer to move or two
+// for each index we can choose to use or not.
+
+// if (), like this, we need to count as two ,
+// if (()), so for each () we can expand,
+
+
+
+```
 
 ## 583. Delete Operation for Two Strings
 
