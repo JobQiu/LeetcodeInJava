@@ -1,6 +1,94 @@
 Things learned from dp problems :
 
+
 use previous result to get the result for the current one.
+usually the length will plus one is for the first row and first column.
+
+
+## 120 Triangle
+
+https://leetcode.com/problems/triangle/description/
+
+```
+
+  int[] A = new int[triangle.size()+1];
+    for(int i=triangle.size()-1;i>=0;i--){
+        for(int j=0;j<triangle.get(i).size();j++){
+            A[j] = Math.min(A[j],A[j+1])+triangle.get(i).get(j);
+        }
+    }
+    return A[0];
+
+    int[] A = new int[triangle.size() + 1];
+
+    for(int i = triangle.size()-1 ; i >= 0  ; i++){
+
+
+      } // end of for I
+
+
+```
+
+---
+
+## 115. Distinct subsequence
+
+```
+public int numDistinct(String S, String T) {
+    // array creation
+    int[][] mem = new int[T.length()+1][S.length()+1];
+
+    // filling the first row: with 1s
+    for(int j=0; j<=S.length(); j++) {
+        mem[0][j] = 1;
+    }
+
+    // the first column is 0 by default in every other rows but the first, which we need.
+
+    for(int i=0; i<T.length(); i++) {
+        for(int j=0; j<S.length(); j++) {
+            if(T.charAt(i) == S.charAt(j)) {
+                mem[i+1][j+1] = mem[i][j] + mem[i+1][j];
+            } else {
+                mem[i+1][j+1] = mem[i+1][j];
+            }
+        }
+    }
+
+    return mem[T.length()][S.length()];
+}
+```
+```
+public int numDistinct(String s, String t){
+  int[][] dp = new int[t.length() + 1] [s.length()+1];
+
+  for(int i = 0; i <= s.length() ; i++){
+    dp[0][i] = 1;
+    } // end of for I
+
+    -8
+}
+
+```
+
+
+---
+
+
+## 97. Interleaving String
+
+public boolean isInterleave(String s1, String s2, String s3){
+
+
+  // for example you hava ale and pp
+  //   | a l e
+  // - t t f f
+  // p f
+  // p
+
+  dp[i][j] = i>0 && dp[i-1][j] is True
+  and s1.charAt[i-1] = s3.charAt(i+j-1)
+}
 
 
 ---
