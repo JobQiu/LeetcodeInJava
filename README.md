@@ -57,23 +57,23 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 ## Ideas checklist
 
 
-Tree Problems, inorder, preorder,
-DP, reuse the previous result.
-DFS
-BFS
-BackStracking
-Array, 2 pointers, swap
-Matrix or Array, visited mark.
-Map, or array as dictionaries.
-Binary Search, insert
-Array, the number is the index of another number
-Queue,
-Stack,
-Trie
-Linkedlist, find the start of loop,
-Intervals,
-Bit manipulation.
-Divide by 0.
+- Tree Problems, inorder, preorder,
+- DP, **if we can reuse the previous result.**
+- DFS
+- BFS
+- BackStracking
+- Array, 2 pointers, swap
+- Matrix or Array, visited mark.
+- Map, or array as dictionaries.
+- Binary Search, insert
+- Array, **if the number is the index of another number**
+- Queue,
+- Stack,
+- Trie
+- Linkedlist, find the start of loop,
+- Intervals,
+- Bit manipulation.
+- Divide by 0.
 
 
 ---
@@ -86,9 +86,16 @@ Divide by 0.
 we need to return the number of continuous sub arrays whose sum is target. So one idea is to reuse the previous sums,
 for example, the accumulative sum for this array is 0 1 2 3, so 2 - 0 is the target, and 3 - 1 is the target 2, so we have 2 subarrays meet the requirements.
 
-<font color=green>
-The idea here, is to use an array or map to store the previous results, so that we dont need to calculate them again but just use them, it's kind like a cache.</font>
+**The idea here, is to use an array or map to store the previous results, so that we dont need to calculate them again but just use them, it's kind like a cache.**
 
+139. Word break, given a string applepenapple, and there are two words apple and pen in the dictionary, determine if the string can be divided into words.
+
+use a dp array to see if from 0 to i can be divided into words,
+then the dp for this string becomes
+   a p p l e p e n a p p l e
+[t f f f f t f f t f f f f t]
+return true.
+It can be faster if we use trie.
 
 
 ### 3. DFS
@@ -107,10 +114,19 @@ The basic idea is also iterate all the possible situations to see if it's possib
 ### 8. Map, or array as dictionaries.
 ### 9. Binary Search, insert
 ### 10. Array, the number is the index of another number
+
+448. Find All Numbers Disappeared in an Array. Given an array, there are numbers from 1 to n, for example, [4,3,2,7,8,2,3,1], there are 8 numbers, we need to find numbers from 1 to n that does not appears in this array, in this example, they're 5 ad 6. Notice, each number-1 is an index for another number, so if we can mark their corresponding indices, we can iterate from 1 to n to get those numbers without marks.
+
+[4 3 2 7 8 2 3 1]
+[t t t t f f t t]
+
+
+
+
 ### 11. Queue,
 ### 12. Stack,
 ### 13. Trie
-### 14. Linkedlist, find the start of loop,
+### 14. LinkedList, find the start of loop,
 ### 15. Intervals,
 ### 16. Bit manipulation.
 ### 17. Divide by 0
