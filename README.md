@@ -54,12 +54,12 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 - [ ] the length of each rows in int[][] can be different.
 
 
-## Ideas checklist
+## Solutions checklist, iterate this checklist to see if you can solve the problems using this methods.
 
 
 - Tree Problems, inorder, preorder,
 - DP, **if we can reuse the previous result.**
-- DFS
+- DFS, **if we need to iterate all the situation to mark or compare **
 - BFS
 - BackStracking
 - Array, 2 pointers, swap
@@ -74,6 +74,8 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 - Intervals,
 - Bit manipulation.
 - Divide by 0.
+- Priority Queue.
+- Boundary problems.
 
 
 ---
@@ -92,8 +94,12 @@ for example, the accumulative sum for this array is 0 1 2 3, so 2 - 0 is the tar
 
 use a dp array to see if from 0 to i can be divided into words,
 then the dp for this string becomes
+
+```
    a p p l e p e n a p p l e
 [t f f f f t f f t f f f f t]
+```
+
 return true.
 It can be faster if we use trie.
 
@@ -113,11 +119,15 @@ The basic idea is also iterate all the possible situations to see if it's possib
 ### 7. Matrix or Array, visited mark.
 ### 8. Map, or array as dictionaries.
 ### 9. Binary Search, insert
+
+240. search a 2d matrix ii.
+
 ### 10. Array, the number is the index of another number
 
 448. Find All Numbers Disappeared in an Array. Given an array, there are numbers from 1 to n, for example, [4,3,2,7,8,2,3,1], there are 8 numbers, we need to find numbers from 1 to n that does not appears in this array, in this example, they're 5 ad 6. Notice, each number-1 is an index for another number, so if we can mark their corresponding indices, we can iterate from 1 to n to get those numbers without marks.
 
 [4 3 2 7 8 2 3 1]
+
 [t t t t f f t t]
 
 
@@ -128,8 +138,27 @@ The basic idea is also iterate all the possible situations to see if it's possib
 ### 13. Trie
 ### 14. LinkedList, find the start of loop,
 ### 15. Intervals,
+
+There is a very special trick for interval problems,
+By sorting the start and end, we can solve the problems faster.
+
+253. Meeting Rooms II. Given an array of Intervals, we need to determine how many rooms we need to hold these meetings.
+
+<img src="https://i.loli.net/2018/09/24/5ba81e5ea9d15.jpg" width="500px"/>
+
+406. Queue Reconstruction by Height
+
+
 ### 16. Bit manipulation.
+
+Simplify the problem by represent them in bit.
+
 ### 17. Divide by 0
+
+### 18. Priority Queue.
+### 19. Boundary problems.
+
+
 
 ----
 
