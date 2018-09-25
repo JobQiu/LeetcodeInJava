@@ -103,6 +103,7 @@ then the dp for this string becomes
 return true.
 It can be faster if we use trie.
 
+https://medium.com/algorithms-and-leetcode/dp-c6797e0618a
 
 ### 3. DFS
 
@@ -111,6 +112,7 @@ So you can just use a 4-depth dfs to iterate all the possible situations to get 
 I think you can also use BFS, since we need to iterate all the situations.
 679. 24 Game, give u 4 numbers, for example, 4 1 8 7, if it's possible to get a 24 from them.
 The basic idea is also iterate all the possible situations to see if it's possible.
+*Use array instead of list will be faster. *
 
 
 ### 4. BFS
