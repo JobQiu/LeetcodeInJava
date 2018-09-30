@@ -62,7 +62,7 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 - DFS, **if we need to iterate all the situation to mark or compare **
 - BFS
 - BackStracking
-- Array, 2 pointers, swap
+- Array, 2 pointers, swap, if the array is sorted, consider the 2 sum when the input array is sorted. 
 - Matrix or Array, visited mark.
 - Map, or array as dictionaries.
 - Binary Search, insert
