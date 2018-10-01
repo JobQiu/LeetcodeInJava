@@ -32,7 +32,7 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 
 ### The optimal procedure of code interview from experience
 
-- [ ] Read the problem and ask for clarifications. some specific situation of input, get every information you need, you might miss sth that could be helpful.
+- [ ] Read the problem and ask for clarifications. some specific situation of input, get every information you need, you might miss sth that could be helpful. Can we modify the incoming arguments
 - [ ] What should we do if we don't have any idea. I think in real world, there is no best solution as we solve the problems in leetcode. So I think in real work, if you need to get things done, you have to search the website, ask information from senior colleagues. At least you need to get things done even in brute force ways. And then you need to mark it and try your best to improve it.
 - [ ] Explain the method in a normal speed, and ask questions like, do u follow me, does this make sense, or can u correct me when it does not make sense.
 - [ ] i think it's a good idea to list several examples, and explain your solution using those examples
@@ -62,7 +62,7 @@ Also a good idea to practice your ability to implement your ideas, for example, 
 - DFS, **if we need to iterate all the situation to mark or compare **
 - BFS
 - BackStracking
-- Array, 2 pointers, swap, if the array is sorted, consider the 2 sum when the input array is sorted. 
+- Array, 2 pointers, swap, if the array is sorted, consider the 2 sum when the input array is sorted.
 - Matrix or Array, visited mark.
 - Map, or array as dictionaries.
 - Binary Search, insert
@@ -165,3 +165,11 @@ Simplify the problem by represent them in bit.
 ----
 
 The idea of this note, is to generalize all the problems I've solved, and build a checklist, so that every time I need to solve new problems, I can check if I've met some similar questions before.
+
+## 刷题的正确态度
+
+从刷题中我们可以获得什么，
+
+1. 对于一种语言的熟练，想法变成代码的能力
+2. 解决问题能力的锻炼，举一反三，获得一种工具之后泛化应用到其他问题上的能力
+3. 交流，如果是你不能解决的问题，如何寻求帮助
