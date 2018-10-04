@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class LT015 {
 
+
+
     List<List<Integer>> threeSum01(int[] nums) {
         List<List<Integer>> list = new ArrayList();
         if (nums == null || nums.length <= 2) {
@@ -57,10 +59,14 @@ public class LT015 {
 
 
     public static void main(String[] args) {
-        int[] test = new int[]{1, -1, -1, 0};
-        LT015 l = new LT015();
-        List<List<Integer>> res = l.threeSum01(test);
-        System.out.println("");
+//        int[] test = new int[]{1, -1, -1, 0};
+//        LT015 l = new LT015();
+//        List<List<Integer>> res = l.threeSum01(test);
+//        System.out.println("");
+
+        int[] test = new int[]{6,7,8,1,2,3,4,5,6};
+
+
 
 
     }

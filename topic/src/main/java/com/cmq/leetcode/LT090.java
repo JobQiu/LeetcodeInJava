@@ -9,10 +9,63 @@ import java.util.*;
 public class LT090 {
 
     public static void main(String[] args) {
-        int[] test = new int[]{1, 2, 2};
-        LT090 l = new LT090();
-        List<List<Integer >> res = l.subsetsWithDup(test);
-        System.out.println("");
+//        int[] test = new int[]{1, 2, 2};
+//        LT090 l = new LT090();
+//        List<List<Integer >> res = l.subsetsWithDup(test);
+//        System.out.println("");
+
+        String test = "123";
+        System.out.println(test.substring(0,1));
+
+
+        int[] nums = new int[]{1, 2, 2};
+        List<List<Integer>> list = new ArrayList();
+
+        List<Integer> temp = new ArrayList();
+
+        helper(list, temp, nums, 0);
+
+        System.out.println("" +
+                "");
+
+    }
+
+    private static void helper(List<List<Integer>> list, List<Integer> temp, int[] nums, int start) {
+
+        if (start <= nums.length) {
+            list.add(new ArrayList<>(temp));
+        } // END of if
+
+        int i = start;
+        while (i < nums.length) {
+            temp.add(nums[i]);
+            helper(list, temp, nums, i + 1);
+            temp.remove(temp.size() - 1);
+
+            i++;
+            while (i<nums.length &&  nums[i] == nums[i - 1]) {
+                System.out.println(nums[i] + " is same with " + nums[i - 1]);
+                i++;
+            } // END of if
+        } // END of while
+
+
+    }
+
+
+    public void helper(List<List<Integer>> res, List<Integer> each, int pos, int[] n) {
+        if (pos <= n.length) {
+            res.add(each);
+        }
+        int i = pos;
+        while (i < n.length) {
+            each.add(n[i]);
+            helper(res, new ArrayList<>(each), i + 1, n);
+            each.remove(each.size() - 1);
+            i++;
+            while (i < n.length && n[i] == n[i - 1]) {i++;}
+        }
+        return;
     }
 
 
@@ -32,7 +85,7 @@ public class LT090 {
         for (int i = start; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
 
-                if(i > 0 && nums[i] == nums[i-1]){
+                if (i > 0 && nums[i] == nums[i - 1]) {
                     continue;
                 } // end of if
 
@@ -41,8 +94,8 @@ public class LT090 {
                     temp.addAll(a);
                     backtracking(result, temp, nums, start + mapcout.get(nums[start]));
 
-                    for(int j = 0; j < a.size() ; j++){
-                        temp.remove(temp.size()-1);
+                    for (int j = 0; j < a.size(); j++) {
+                        temp.remove(temp.size() - 1);
                     } // end of for j
 
                 }
