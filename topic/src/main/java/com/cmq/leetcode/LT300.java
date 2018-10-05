@@ -1,5 +1,7 @@
 package com.cmq.leetcode;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @author xavier.qiu
  * 10/3/18 10:40 PM
@@ -7,32 +9,40 @@ package com.cmq.leetcode;
 public class LT300 {
 
     public static void main(String[] args) {
-        int[] nums = new int[]{10, 9, 2, 5, 3, 7, 101, 18};
+
+        int[] nums = new int[]{4, 10, 4, 3, 8, 9};
 
         int l = nums.length;
         int[] temp = new int[l];
-
-        int res = 1;
-        temp[0] = nums[0];
-        for (int i = 1; i < l; i++) {
-            int pos = searchInsert(temp, nums[i], 0, res);
-            if (pos < res) {
-                temp[pos] = nums[i];
-            } // END of if
-            else {
-                temp[pos] = nums[i];
-                res = pos;
-            }
-            System.out.println(nums[i] + " : " + pos);
+        for (int i = 0; i < l; i++) {
+            temp[i] = Integer.MAX_VALUE;
         } // END of for i
 
+        int res = 0;
 
+        temp[0] = nums[0];
+        for (int n : nums) {
+            int pos = searchInsert(temp, n);
+            System.out.println(pos);
+            temp[pos] = n;
+            if (pos > res) {
+                res = pos;
+            } // END of if
+            System.out.println(JSON.toJSONString(temp));
+
+        } // END of for
+
+        // 4 m m m m m
+        // 4 10 m m m m
+        // 4 10 m m m m
+        // 3 10 m m m m
+        // 3 8 m m m m
+        // 3 8 9 m m m
     }
 
-
-    private static int searchInsert(int[] A, int target, int start, int end) {
-
-        int low = start, high = end;
+    private static int searchInsert(int[] A, int target) {
+        int low = 0, high = A.length - 1;
+//        int low = start, high = end;
         while (low <= high) {
             int mid = (low + high) / 2;
             if (A[mid] == target) return mid;
@@ -41,4 +51,6 @@ public class LT300 {
         }
         return low;
     }
+
+
 }
