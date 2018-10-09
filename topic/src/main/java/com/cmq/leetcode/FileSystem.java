@@ -8,6 +8,56 @@ import java.util.Arrays;
  */
 public class FileSystem {
 
+
+    /***
+     * insert a number k into an array A
+     *
+     * @param A, assume A is not empty, null or so.
+     * @return
+     * @throws
+     **/
+    private int insertPos(int[] nums, int k){
+
+        int lo = 0;
+        int hi = nums.length ;
+
+        while(  lo < hi ){
+            int mid = (lo + hi) /2 ;
+            if(nums[mid] == k ){
+                return mid;
+            } // END of if
+            if(nums[mid] > k){
+                hi = mid;
+            } // END of if
+            else{
+                lo = mid + 1;
+            }
+
+        } // END of while
+
+        return lo;
+    }
+
+    public static void main(String[] args) {
+
+        FileSystem s = new FileSystem();
+        int[] A = new int[]{1,3 , 5, 6};
+        System.out.println(s.insertPos(A, 0));
+        System.out.println(s.insertPos(A, 1));
+        System.out.println(s.insertPos(A, 2));
+        System.out.println(s.insertPos(A, 3));
+        System.out.println(s.insertPos(A, 4));
+        System.out.println(s.insertPos(A, 5));
+        System.out.println(s.insertPos(A, 6));
+        System.out.println(s.insertPos(A, 7));
+
+
+
+    }
+    public FileSystem() {
+
+    }
+
     public static int maximalRectangle(char[][] matrix) {
         if (matrix.length == 0) {
             return 0;
@@ -55,6 +105,7 @@ public class FileSystem {
                 }
             }
 
+
             //compute area
             for (int j = 0; j < n; j++) {
                 maxArea = Math.max(maxArea, (right[j] - left[j]) * height[j]);
@@ -64,16 +115,16 @@ public class FileSystem {
         return maxArea;
     }
 
-    public static void main(String[] args) {
-        char[][] test = new char[][]{
-                {'1', '0', '1', '0', '0', '1', '0'},
-                {'0', '1', '1', '1', '0', '1', '0'},
-                {'1', '1', '1', '1', '0', '1', '1'},
-                {'1', '0', '0', '1', '1', '1', '0'}
-        };
-
-
-        maximalRectangle(test);
-
-    }
+//    public static void main(String[] args) {
+//        char[][] test = new char[][]{
+//                {'1', '0', '1', '0', '0', '1', '0'},
+//                {'0', '1', '1', '1', '0', '1', '0'},
+//                {'1', '1', '1', '1', '0', '1', '1'},
+//                {'1', '0', '0', '1', '1', '1', '0'}
+//        };
+//
+//
+//        maximalRectangle(test);
+//
+//    }
 }
