@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 import java.util.HashMap;
 import java.util.Random;

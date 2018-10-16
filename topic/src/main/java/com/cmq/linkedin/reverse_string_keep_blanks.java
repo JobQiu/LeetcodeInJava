@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 public class reverse_string_keep_blanks {
 

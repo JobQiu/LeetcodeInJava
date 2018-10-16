@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 /*
 自己实现一个stack，可以O(1)实现push， pull， getMiddle，讨论了几分钟写完又跑了一下test。
 

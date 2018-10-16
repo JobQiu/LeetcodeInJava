@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 public class find_min_in_rotated {
     public int findMinInRotated(int[] nums) {

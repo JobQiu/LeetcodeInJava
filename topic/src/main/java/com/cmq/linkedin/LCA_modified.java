@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 public class LCA_modified {
     /**
@@ -47,7 +47,7 @@ public class LCA_modified {
             return null;
 
         TreeNode left = find(root.left, A, B);
-        TreeNode right = find((root.right, A, B);
+        TreeNode right = find(root.right, A, B);
 
         /* if root is what we want to find, update foundA and foundB*/
         if (root == A || root == B) {

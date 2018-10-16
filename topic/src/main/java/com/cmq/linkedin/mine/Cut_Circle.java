@@ -1,4 +1,4 @@
-package com.cmq.linkedin;
+package com.cmq.linkedin.mine;
 
 /*
 Question:

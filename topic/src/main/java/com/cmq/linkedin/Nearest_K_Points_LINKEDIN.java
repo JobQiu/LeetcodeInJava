@@ -1,4 +1,5 @@
-package LinkedIn;
+/*
+package com.cmq.linkedin;
 
 import java.util.*;
 
@@ -15,7 +16,9 @@ public class Nearest_K_Points_LINKEDIN {
     }
 
 
-    /* method, my own version */
+    */
+/* method, my own version *//*
+
     public List<Point> findNearestPoints_own_quickSelect(Point point, int k, Point[] points) {
         List<Point> list = new ArrayList<>();
         if (k <= 0) return list;
@@ -26,10 +29,14 @@ public class Nearest_K_Points_LINKEDIN {
         }
     }
 
-    /* method 1 */
-    /*
+    */
+/* method 1 *//*
+
+    */
+/*
     use priority queue : O(nlogn)
-     */
+     *//*
+
     public List<Point> findNearestPoints(Point point, int k, Point[] points) {
         List<Point> result = new ArrayList<>();
         if (k <= 0) {
@@ -67,9 +74,13 @@ public class Nearest_K_Points_LINKEDIN {
 
 
 
-    /* method 2 */
-    /* use quick select : O(n)
-    * */
+    */
+/* method 2 *//*
+
+    */
+/* use quick select : O(n)
+    * *//*
+
     public Point findNearestKthPoint(Point[] points, int k) {
         if (k > points.length || k == 0) {
             throw new IllegalArgumentException("K's value is illegal\n");
@@ -126,9 +137,11 @@ public class Nearest_K_Points_LINKEDIN {
         points[index2] = temp;
     }
 
-    /**
+    */
+/**
      * another version from github : https://github.com/tongzhang1994/Facebook-Interview-Coding/blob/master/Find%20K%20Closest%20Points.java
-     */
+     *//*
+
 
 
 
@@ -201,3 +214,4 @@ public class Nearest_K_Points_LINKEDIN {
         points[right] = temp;
     }
 }
+*/

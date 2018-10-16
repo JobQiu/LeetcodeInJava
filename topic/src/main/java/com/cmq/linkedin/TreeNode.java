@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 public class TreeNode {
 

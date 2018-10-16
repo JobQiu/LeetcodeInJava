@@ -1,5 +1,7 @@
-package LinkedIn;
+/*
+package com.cmq.linkedin;
 
+*/
 /*
 
 真的是平生第一次看到这个题，看到之后傻了半天，后来给了O(n^2)的算法，manager问time complexity，然后说有更好的算法O(nlogn)。
@@ -11,10 +13,19 @@ manager自己走到白板前，刷刷刷的从头到尾把算法讲出来了。�
 // http://www.geeksforgeeks.org/convex-hull-set-2-graham-scan/
 // find the most left buttom point,
 // find all the remain points that three of them form a counter clockwise line
- */
+ *//*
 
+
+
+import java.util.*;
 
 public class Convex_hull {
+
+    class Point {
+        int x;
+        int y;
+    }
+
     public List<Point> convexHull(Point[] points) {
         List<Point> hull = new ArrayList<>();
         if (points == null && points.length == 0) {
@@ -38,8 +49,7 @@ public class Convex_hull {
                 int orientation = orientation(points[0], p1, p2);
                 if (orientation == 1) {
                     return -1;
-                }
-                else if (orientation == 2) {
+                } else if (orientation == 2) {
                     return 1;
                 }
                 return 0;
@@ -80,6 +90,7 @@ public class Convex_hull {
         stack.push(top);
         return result;
     }
+
     // linear -> 0
     // p, q, r form a counterClock -> 1
     // p, q, r form a clockwise -> 2
@@ -95,3 +106,4 @@ public class Convex_hull {
         return value > 0 ? 2 : 1;
     }
 }
+*/

@@ -1,4 +1,4 @@
-package com.cmq.linkedin;
+package com.cmq.linkedin.mine;
 
 import java.util.ArrayList;
 import java.util.List;

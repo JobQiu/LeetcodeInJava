@@ -1,8 +1,5 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
-import java.awt.image.MultiResolutionImage;
-import java.util.ArrayList;
-import java.util.List;
 
 /*
 Question:
@@ -33,7 +30,7 @@ interface MultiDimArray {
     int getValue(int[] indexes);
 }
 
-public class Multidimensional_Array  {
+public class Multidimensional_Array {
     int getSum(MultiDimArray arr, int[] dim) {
         if (dim.length == 0) return 0;
         return getSum(arr, dim, 0);
@@ -55,6 +52,7 @@ public class Multidimensional_Array  {
 
     /* combination method */
     private int sum;
+
     int getSum_combination(MultiDimArray arr, int[] dim) {
         int[] index = new int[dim.length];
         sum = 0;

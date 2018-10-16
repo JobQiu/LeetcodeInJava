@@ -1,4 +1,4 @@
-package LinkedIn;
+package com.cmq.linkedin;
 
 import java.util.Arrays;
 import java.util.LinkedList;
