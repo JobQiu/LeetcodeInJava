@@ -1,6 +1,10 @@
 package com.cmq.linkedin.mine;
 
+import com.cmq.util.TreeNode;
+
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /* *
@@ -14,10 +18,51 @@ like 282, expression add operations, but we add an extra operations "/" here
     // time complexity: O(4 ^ n)
  */
 public class addOperator_modified {
+
+
+    public String frequencySort(String s) {
+
+        int[] count = new int[128];
+
+        for (char c : s.toCharArray()) {
+            count[c]++;
+        } // END of for
+
+        int max = 0;
+        for (int i = 0; i < 128; i++) {
+            max = Math.max(max, count[i]);
+        } // END of for i
+
+        ArrayList<Character>[] charList = new ArrayList[max + 1];
+
+        for (int n : count) {
+            if (charList[n] == null) {
+                charList[n] = new ArrayList<Character>();
+            } // END of if
+            charList[n].add((char) (n));
+        } // END of for
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = max - 1; i > 0; i--) {
+            if (charList[i] == null) {
+                continue;
+            } // END of if
+            for (Character c : charList[i]) {
+                for (int j = 0; j < i; j++) {
+                    sb.append(c.toString());
+                } // END of for j
+            } // END of for
+        } // END of for i
+        Deque<TreeNode> dq = new LinkedList<>();
+
+        return sb.toString();
+
+    }
+
     public List<String> addOperators(String num, int target) {
         List<String> list = new ArrayList<>();
         if (num.length() == 0) return list;
-        add(num, (long)target, list, "", 0, 0L, 0L);
+        add(num, (long) target, list, "", 0, 0L, 0L);
         return list;
     }
 
