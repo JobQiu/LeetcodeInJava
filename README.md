@@ -1,3 +1,7 @@
+# 前人经验
+
+1. https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=433722
+
 # LeetcodeInJava
 
 Some procedure to practice from [this doc](https://docs.google.com/document/d/1yxATCtTuv5ZgomU2AeL6luNwPWvHSBYSh7V8FLvtLM8/edit#):
